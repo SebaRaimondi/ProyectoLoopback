@@ -114,13 +114,93 @@ module.exports = function(Configuration) {
    */
 
   Configuration.maintenance = function(callback) {
-    this.findOne(function(err, config) {
+    var filters = {
+      fields: {
+        maintenance: true
+      }
+    };
+
+    this.findOne(filters, function(err, config) {
       if (err) {
         callback(err);
       } else {
-        callback(null, config.maintenance);
+        let response = {
+          "maintenance": config.maintenance
+        }
+        callback(null, response);
       };
     });
   };
 
+  /**
+   * Returns title
+   * @param {Function(Error, object)} callback
+   */
+
+  Configuration.title = function(callback) {
+    var filters = {
+      fields: {
+        title: true
+      }
+    };
+
+    this.findOne(filters, function(err, config) {
+      if (err) {
+        callback(err);
+      } else {
+        let response = {
+          "title": config.title
+        }
+        callback(null, response);
+      };
+    });
+  };
+
+  /**
+   * Returns email
+   * @param {Function(Error, object)} callback
+   */
+
+  Configuration.email = function(callback) {
+    var filters = {
+      fields: {
+        email: true
+      }
+    };
+
+    this.findOne(filters, function(err, config) {
+      if (err) {
+        callback(err);
+      } else {
+        let response = {
+          "email": config.email
+        }
+        callback(null, response);
+      };
+    });
+  };
+
+  /**
+   * Returns elements
+   * @param {Function(Error, object)} callback
+   */
+
+  Configuration.elements = function(callback) {
+    var filters = {
+      fields: {
+        elements: true
+      }
+    };
+
+    this.findOne(filters, function(err, config) {
+      if (err) {
+        callback(err);
+      } else {
+        let response = {
+          "elements": config.elements
+        }
+        callback(null, response);
+      };
+    });
+  };
 };

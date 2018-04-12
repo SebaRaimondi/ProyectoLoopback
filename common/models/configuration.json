@@ -84,7 +84,7 @@
       "description": "Toggles maintainance",
       "http": [
         {
-          "path": "/toggleMaintainance",
+          "path": "/toggleMaintenance",
           "verb": "put"
         }
       ]
@@ -142,6 +142,63 @@
       "http": [
         {
           "path": "/maintenance",
+          "verb": "get"
+        }
+      ]
+    },
+    "title": {
+      "isStatic": true,
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "object",
+          "root": true,
+          "description": "Contains title"
+        }
+      ],
+      "description": "Returns title",
+      "http": [
+        {
+          "path": "/title",
+          "verb": "get"
+        }
+      ]
+    },
+    "email": {
+      "isStatic": true,
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "object",
+          "root": true,
+          "description": "Contains email"
+        }
+      ],
+      "description": "Returns email",
+      "http": [
+        {
+          "path": "/email",
+          "verb": "get"
+        }
+      ]
+    },
+    "elements": {
+      "isStatic": true,
+      "accepts": [],
+      "returns": [
+        {
+          "arg": "result",
+          "type": "object",
+          "root": true,
+          "description": "Contains elements"
+        }
+      ],
+      "description": "Returns elements",
+      "http": [
+        {
+          "path": "/elements",
           "verb": "get"
         }
       ]
